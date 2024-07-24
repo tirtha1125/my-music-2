@@ -40,24 +40,58 @@
         </ul>
     </section>
 
-    <section id="videos">
+    </section>
+  <section id="videos">
         <h2>My Videos</h2>
         <div class="video-container">
             <h3>ভালোবাসার প্রতীক্ষা</h3>
             <video controls>
                 <source src="InShot_20240721_094257301 (1).mp4" type="video/mp4">
                 Your browser does not support the video tag.
-            </video>
+        
+      <div style="max-width: 600px; margin: 0 auto; position: relative;">
+        <video id="video" style="width: 100%; height: auto;">
+            <source src="path_to_your_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(0, 0, 0, 0.5); position: absolute; bottom: 0; width: 100%; padding: 5px; box-sizing: border-box;">
+            <button id="playPause" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer; margin: 0 5px;">▶️</button>
+            <input type="range" id="seekBar" value="0" step="0.1" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer; margin: 0 5px; width: 100px;">
+            <input type="range" id="volumeBar" value="1" max="1" step="0.1" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer; margin: 0 5px; width: 100px;">
         </div>
-        <div class="video-container">
-            <h3>যদি একবার বলো তুমি</h3>
-            <video controls>
-                <source src="videos/video2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <!-- Add more videos as needed -->
-    </section>
+    </div>
+
+    <script>
+        const video = document.getElementById('video');
+        const playPauseButton = document.getElementById('playPause');
+        const seekBar = document.getElementById('seekBar');
+        const volumeBar = document.getElementById('volumeBar');
+
+        playPauseButton.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                playPauseButton.textContent = '⏸';
+            } else {
+                video.pause();
+                playPauseButton.textContent = '▶️';
+            }
+        });
+
+        video.addEventListener('timeupdate', () => {
+            const value = (100 / video.duration) * video.currentTime;
+            seekBar.value = value;
+        });
+
+        seekBar.addEventListener('input', () => {
+            const time = video.duration * (seekBar.value / 100);
+            video.currentTime = time;
+        });
+
+        volumeBar.addEventListener('input', () => {
+            video.volume = volumeBar.value;
+        });
+    </script>
+</body>
 
         <h2>About Me</h2>
         <p>These is my personal website MusiC with TirtharaJ . Here you'll find my latest tracks,guitar cover and videos.</p>
