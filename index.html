@@ -56,14 +56,17 @@
     <section id="music">
         <h2>My Music</h2>
         <ul>
-    
+            <li>
                 <p style="font-size:20px;color:DeepSkyBlue">ভালোবাসার প্রতীক্ষা</p>
-                <audio id="player" src="ভালোবাসার প্রতীক্ষা.mp3" </audio>
-            <div>
+                <div>
+                                    <audio controls>
+                    <source src="ভালোবাসার প্রতীক্ষা.mp3" type="audio/mpeg">
     <button onclick="document.getElementById('player').play()">Play</button>
     <button onclick="document.getElementById('player').pause()">Pause</button>
     <button onclick="document.getElementById('player').muted=!document.getElementById('player').muted">Mute/ Unmute</button>
-            </div>
+                
+                </audio>
+            </li>
             <li>
                  <p style="font-size:20px;color:DeepSkyBlue">যদি একবার বলো তুমি</p>
                 <audio controls>
