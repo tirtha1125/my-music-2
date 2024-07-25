@@ -4,6 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MusiC with TirtharaJ</title>
+    <style>
+        .video-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        video {
+            width: 100%;
+            height: auto;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .controls button,
+        .controls input[type="range"] {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .controls input[type="range"] {
+            width: 100px;
+        }
+    </style>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
