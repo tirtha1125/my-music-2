@@ -58,10 +58,12 @@
         <ul>
             <li>
                 <p style="font-size:20px;color:DeepSkyBlue">ভালোবাসার প্রতীক্ষা</p>
-                <audio controls>
-                    <source src="ভালোবাসার প্রতীক্ষা.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
+                <audio id="player" src="ভালোবাসার প্রতীক্ষা.mp3" type="audio/mpeg">
+            <div>
+    <button onclick="document.getElementById('player').play()">Play</button>
+    <button onclick="document.getElementById('player').pause()">Pause</button>
+    <button onclick="document.getElementById('player').muted=!document.getElementById('player').muted">Mute/ Unmute</button>
+            </div>
             </li>
             <li>
                  <p style="font-size:20px;color:DeepSkyBlue">যদি একবার বলো তুমি</p>
